@@ -1,0 +1,31 @@
+{
+  "name": "projectakhir",
+  "version": "1.0.0",
+  "description": "rest API dataPenduduk ini menggunakan nodejs",
+  "main": "app.js",
+  "scripts": {
+    "FD": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Far1zzz/projectAkhir.git"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "mongodb"
+  ],
+  "author": "Muhammad Alfa Rizi (2125250100)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Far1zzz/projectAkhir/issues"
+  },
+  "homepage": "https://github.com/Far1zzz/projectAkhir#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.7.5",
+    "nodemon": "^2.0.20"
+  }
+}
