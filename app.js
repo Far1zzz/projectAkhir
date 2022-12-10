@@ -19,9 +19,10 @@ app.get("/", (req, res) => {
 
 // pengimport an routes
 const dataPendudukRoutes = require("./routes/dapen");
-
+const authRoutes = require("./routes/auth");
 //  pendaftaran middleware baru ke express
 app.use("/penduduk", dataPendudukRoutes);
+app.use("/auth", authRoutes);
 
 // koneksi ke database mongo
 mongoose.connect(process.env.DB_CONNECTION, {

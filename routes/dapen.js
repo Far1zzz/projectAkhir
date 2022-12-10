@@ -3,9 +3,10 @@ const express = require("express");
 const router = express.Router();
 const DataPenduduk = require("../models/Dapen");
 const response = require("../config/response");
+const verifyToken = require("../config/verifyToken");
 
 // buat
-router.post("/", async (req, res) => {
+router.post("/", verifyToken, async (req, res) => {
   // menampungan input
   const dapenPost = new DataPenduduk({
     nik: req.body.nik,
@@ -37,7 +38,7 @@ router.post("/", async (req, res) => {
 });
 
 // Get data
-router.get("/", async (req, res) => {
+router.get("/", verifyToken, async (req, res) => {
   try {
     const dapen = await DataPenduduk.find();
     // res.json(dapen);
@@ -50,7 +51,7 @@ router.get("/", async (req, res) => {
 
 //  put data
 
-router.put("/:pendudukId", async (req, res) => {
+router.put("/:pendudukId", verifyToken, async (req, res) => {
   // tampungan input data penduduk
   const data = {
     nik: req.body.nik,
@@ -85,7 +86,7 @@ router.put("/:pendudukId", async (req, res) => {
 });
 
 // delete data
-router.delete("/:pendudukId", async (req, res) => {
+router.delete("/:pendudukId", verifyToken, async (req, res) => {
   try {
     // delete
     const dapen = await DataPenduduk.deleteOne({
