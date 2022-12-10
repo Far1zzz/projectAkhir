@@ -61,7 +61,7 @@ const dapenSchema = mongoose.Schema({
   },
   golDarah: {
     type: String,
-    require: true,
+    require: false,
   },
 });
 
