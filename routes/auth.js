@@ -68,7 +68,7 @@ router.post("/login", async (req, res) => {
   if (error)
     return res.status(400).json({
       status: res.statusCode,
-      data: user,
+
       message: error.details[0].message,
     });
 
@@ -94,6 +94,7 @@ router.post("/login", async (req, res) => {
   // Authorization ini akan digunakan ketika ingin mengakses API yang membutuhkan token untuk mengaksesnya
   res.header("Authorization", token).json({
     token: token,
+    data: user,
   });
 });
 
