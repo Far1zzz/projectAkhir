@@ -68,6 +68,7 @@ router.post("/login", async (req, res) => {
   if (error)
     return res.status(400).json({
       status: res.statusCode,
+      data: user,
       message: error.details[0].message,
     });
 
