@@ -11,6 +11,7 @@ router.post("/", verifyToken, async (req, res) => {
   const dapenPost = new DataPenduduk({
     nik: req.body.nik,
     nama: req.body.nama,
+    tempatLahir: req.body.tempatLahir,
     tanggalLahir: req.body.tanggalLahir,
     jenisKelamin: req.body.jenisKelamin,
     alamat: req.body.alamat,
