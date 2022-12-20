@@ -50,6 +50,18 @@ router.get("/", verifyToken, async (req, res) => {
   }
 });
 
+// Get data by id
+router.get("/:id", verifyToken, async (req, res) => {
+  try {
+    const dapen = await DataPenduduk.findOne({ _id: req.params.id });
+    // res.json(dapen);
+    response(200, dapen, "Get Data Success", res);
+  } catch (error) {
+    // res.json({ message: error });
+    res.status(404).json({ message: error.message });
+  }
+});
+
 //  put data
 
 router.put("/:pendudukId", verifyToken, async (req, res) => {
